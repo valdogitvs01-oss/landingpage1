@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #2563eb;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #2563eb;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* FLOATING ICON */
+.floating-icons span {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-icons span:nth-child(1){top:20%;left:10%}
+.floating-icons span:nth-child(2){top:30%;right:15%}
+.floating-icons span:nth-child(3){bottom:20%;left:50%}
+
+@keyframes float {
+  0% {transform: translateY(0)}
+  50% {transform: translateY(-15px)}
+  100% {transform: translateY(0)}
+}
+
+/* SERVICES */
+.services {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 12px;
+  background: #f9fafb;
+  transition: transform .3s;
+}
+
+/* ABOUT, CONTACT, TERMS */
+.about, .contact, .terms {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+/* FORM */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+form button {
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #111827;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ANIMATION SCROLL */
+.card, .about, .contact, .terms {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
